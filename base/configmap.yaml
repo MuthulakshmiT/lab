@@ -1,0 +1,15 @@
+
+apiVersion: v1
+
+kind: ConfigMap
+
+metadata:
+
+  name: webapp-config
+
+data:
+
+  APP_ENV: "base"
+
+  APP_MESSAGE: "Welcome to Base"
+

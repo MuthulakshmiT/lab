@@ -1,0 +1,31 @@
+
+apiVersion: batch/v1
+
+kind: Job
+
+metadata:
+
+  name: db-migration
+
+  annotations:
+
+    argocd.argoproj.io/sync-wave: "1"
+
+spec:
+
+  template:
+
+    spec:
+
+      containers:
+
+        - name: migrate
+
+          image: busybox:1.36
+
+          command: ["sh", "-c", "echo 'Starting DB migration...'; sleep 5; echo 'DB migration complete.'"]
+
+      restartPolicy: Never
+
+  backoffLimit: 1
+
